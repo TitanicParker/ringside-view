@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ringside View — Rigor and Validation</title>
+  <style>
+    :root{--ink:#1f2933;--muted:#667085;--paper:#fbf7ef;--card:#fffdf8;--line:#ded3c2;--deep:#17202a;--blue:#263f5f;--gold:#b8872b;--green:#2f5d50;}
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.7;}
+    header{background:linear-gradient(135deg,#111820,#263f5f);color:white;padding:56px 8vw 44px;border-bottom:6px solid var(--gold);}
+    header p{max-width:900px;color:#f7ead7;font-size:1.15rem;margin:0;}
+    h1{font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.02;letter-spacing:-.05em;margin:0 0 16px;}
+    main{max-width:1040px;margin:0 auto;padding:42px 24px 80px;}
+    section{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;margin:22px 0;box-shadow:0 16px 50px rgba(23,32,42,.08);}
+    h2{font-size:1.75rem;line-height:1.18;margin:0 0 14px;color:var(--deep);}
+    p{font-size:1.06rem;margin:0 0 16px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px;}
+    .doc{background:#f7f0e4;border:1px solid var(--line);border-radius:18px;padding:20px;}
+    .doc h3{margin:0 0 10px;color:var(--blue);font-size:1.25rem;}
+    a.button{display:inline-block;text-decoration:none;background:var(--deep);color:white;border-radius:999px;padding:12px 18px;font-weight:bold;margin-top:10px;}
+    a.secondary{display:inline-block;text-decoration:none;color:var(--blue);border:1px solid var(--line);background:#fffdf8;border-radius:999px;padding:11px 16px;margin-top:10px;}
+    .note{border-left:6px solid var(--green);background:#f7f0e4;}
+    .footer{color:var(--muted);font-size:.95rem;border-top:1px solid var(--line);padding-top:18px;margin-top:30px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rigor and validation</h1>
+    <p>For statistically minded readers who want to inspect the procedural, corpus, and validation-facing layer of A1–A6 rather than relying on the introductory presentation alone.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Not a passing intuition</h2>
+      <p>A1–A6 is not being presented as a slogan, a private enthusiasm, or a clever phrase looking for permission. It has already been pushed through structured testing: source-language packet resolution, axis recovery, cell validation, distribution analysis, translation stability checks, and limitation statements.</p>
+      <p>The claim is still open to challenge. It should be challenged. But it should be challenged at the level at which it now stands: as a developed sentence-resolution instrument with corpora, protocols, axes, recovery studies, statistical summaries, and a clear path toward stronger validation.</p>
+    </section>
+
+    <section class="note">
+      <h2>What these studies do and do not claim</h2>
+      <p>These studies support procedural seriousness and bounded corpus validity. They show that A1–A6 packets can be completed at scale and that Operator, Orientation, and Remainder can be recovered from locked packets in completed datasets.</p>
+      <p>They do not, by themselves, prove final universality across every sentence, genre, language, historical period, or oral form. Their value is that they make the next challenge precise: independent readers, blind samples, hostile cases, non-formulaic packet audits, genre expansion, and inter-reader reliability.</p>
+    </section>
+
+    <section>
+      <h2>Validation artifacts</h2>
+      <div class="grid">
+        <article class="doc">
+          <h3>Multilingual constitutional recovery study</h3>
+          <p>A controlled 500-sentence multilingual study testing whether completed declarative constitutional sentences can be resolved into A1–A6 packets and then into Operator, Orientation, and Remainder.</p>
+          <p>Its central value is cross-language stability under controlled translation conditions.</p>
+          <a class="button" href="three_axis_recovery_study.html">Open study</a>
+        </article>
+
+        <article class="doc">
+          <h3>System-specific recovery study</h3>
+          <p>A 500-sentence recovery study drawn from the Perpetual Essays archive, testing the same three-axis procedure across project-facing sentences and a broader spread of the 54-cell space.</p>
+          <p>Its central value is internal breadth and cell-space coverage.</p>
+          <a class="button" href="three_axis_recovery_system_specific_axis_recovery_matched.html">Open study</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>The short version</h2>
+      <p>This project is not arriving with one shoe on and one shoe off. It is the result of a long body of work that has already been formalized, tested, corrected, tabulated, and exposed to statistical pressure. Anyone asking “on what grounds is this based?” should begin here.</p>
+      <a class="secondary" href="../index.html">Return to Galway landing page</a>
+      <a class="secondary" href="../Ringside_View.html">Enter Ringside View</a>
+    </section>
+
+    <p class="footer">Ringside View validation layer. Prepared to make the statistical and procedural seriousness of A1–A6 inspectable without diluting the main presentation.</p>
+  </main>
+</body>
+</html>
