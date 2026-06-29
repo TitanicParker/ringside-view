@@ -6,6 +6,7 @@
   style.textContent = [
     '.rest-eyes-sticker{position:fixed;right:clamp(14px,3vw,28px);bottom:clamp(14px,3vw,28px);z-index:80;border:1px solid rgba(255,255,255,.32);border-radius:999px;background:rgba(18,24,34,.78);color:#fff7d9;box-shadow:0 18px 48px rgba(0,0,0,.28);backdrop-filter:blur(16px);cursor:pointer;font:800 .82rem/1.1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.02em;padding:.85rem 1rem;transition:transform 160ms ease,background 160ms ease,border-color 160ms ease}',
     '.rest-eyes-sticker:hover,.rest-eyes-sticker:focus-visible{transform:translateY(-2px);background:rgba(28,37,52,.9);border-color:rgba(255,224,138,.72);outline:none}',
+    '.nav-links a[data-rest-eyes-open]{color:#fff7d9;border-color:rgba(255,224,138,.4)}',
     '.rest-eyes-overlay{position:fixed;inset:0;z-index:120;display:none;place-items:center;padding:clamp(12px,3vw,30px);background:rgba(2,4,9,.88);backdrop-filter:blur(12px)}',
     '.rest-eyes-overlay.is-open{display:grid}',
     '.rest-eyes-dialog{width:min(1120px,100%);height:min(820px,100%);border:1px solid rgba(255,255,255,.18);border-radius:26px;overflow:hidden;background:#05080d;box-shadow:0 30px 120px rgba(0,0,0,.55);display:grid;grid-template-rows:auto 1fr}',
@@ -18,13 +19,6 @@
     '@media(max-width:720px){.rest-eyes-sticker{left:50%;right:auto;transform:translateX(-50%);bottom:12px}.rest-eyes-sticker:hover,.rest-eyes-sticker:focus-visible{transform:translateX(-50%) translateY(-2px)}.rest-eyes-dialog{border-radius:18px}.rest-eyes-bar{align-items:flex-start}.rest-eyes-bar span{display:none}}'
   ].join('\n');
   document.head.appendChild(style);
-
-  var trigger = document.createElement('button');
-  trigger.className = 'rest-eyes-sticker';
-  trigger.type = 'button';
-  trigger.textContent = 'Rest my eyes';
-  trigger.setAttribute('aria-haspopup', 'dialog');
-  trigger.setAttribute('aria-controls', 'rest-eyes-overlay');
 
   var overlay = document.createElement('section');
   overlay.className = 'rest-eyes-overlay';
@@ -44,13 +38,27 @@
     '</div>'
   ].join('');
 
-  document.body.appendChild(trigger);
   document.body.appendChild(overlay);
+
+  var triggers = Array.prototype.slice.call(document.querySelectorAll('[data-rest-eyes-open]'));
+  var fallbackTrigger = null;
+
+  if (!triggers.length) {
+    fallbackTrigger = document.createElement('button');
+    fallbackTrigger.className = 'rest-eyes-sticker';
+    fallbackTrigger.type = 'button';
+    fallbackTrigger.textContent = 'Rest my eyes';
+    fallbackTrigger.setAttribute('aria-haspopup', 'dialog');
+    fallbackTrigger.setAttribute('aria-controls', 'rest-eyes-overlay');
+    document.body.appendChild(fallbackTrigger);
+    triggers.push(fallbackTrigger);
+  }
 
   var close = overlay.querySelector('.rest-eyes-close');
   var lastFocus = null;
 
-  function openRestEyes() {
+  function openRestEyes(event) {
+    if (event) event.preventDefault();
     lastFocus = document.activeElement;
     overlay.hidden = false;
     overlay.classList.add('is-open');
@@ -65,7 +73,11 @@
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
   }
 
-  trigger.addEventListener('click', openRestEyes);
+  triggers.forEach(function (trigger) {
+    trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.setAttribute('aria-controls', 'rest-eyes-overlay');
+    trigger.addEventListener('click', openRestEyes);
+  });
   close.addEventListener('click', closeRestEyes);
   overlay.addEventListener('click', function (event) {
     if (event.target === overlay) closeRestEyes();
