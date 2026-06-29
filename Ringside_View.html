@@ -3,25 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ringside View</title>
-  <style>
-    *{box-sizing:border-box;}
-    body{margin:0;background:#fbf7ef;color:#1f2933;font-family:Georgia,'Times New Roman',serif;}
-    .validation-bar{position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#111820,#263f5f);color:white;border-bottom:4px solid #b8872b;padding:12px 18px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;box-shadow:0 8px 28px rgba(0,0,0,.18);}
-    .validation-bar span{font-size:.98rem;color:#f7ead7;}
-    .validation-bar a{display:inline-block;text-decoration:none;border-radius:999px;padding:9px 14px;font-weight:bold;font-size:.92rem;letter-spacing:.02em;}
-    .validation-bar a.primary{background:#fffdf8;color:#17202a;}
-    .validation-bar a.secondary{border:1px solid rgba(255,255,255,.35);color:white;}
-    iframe{display:block;width:100%;height:calc(100vh - 62px);border:0;background:#fbf7ef;}
-    @media(max-width:700px){.validation-bar{justify-content:flex-start}.validation-bar span{width:100%;}iframe{height:calc(100vh - 110px);}}
-  </style>
+  <title>Ringside View — Public Presentation</title>
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
-  <nav class="validation-bar" aria-label="Ringside View navigation">
-    <span>Ringside View now includes a validation layer for statistically minded readers.</span>
-    <a class="primary" href="rigor-and-validation.html">Rigor and validation</a>
-    <a class="secondary" href="Ringside_View_backup.html">Open original view</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Ringside View</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#theory">Theory</a>
+        <a href="#audiences">Audiences</a>
+        <a href="rigor-and-validation.html">Rigor and validation</a>
+        <a href="llm-transparency.html">LLM transparency</a>
+        <a href="Ringside_View_backup.html">Full archive</a>
+      </div>
+    </div>
   </nav>
-  <iframe src="Ringside_View_backup.html" title="Ringside View original content"></iframe>
+
+  <header class="hero narrow">
+    <p class="kicker">Main public doorway</p>
+    <h1>Ringside View.</h1>
+    <p>A public introduction to A1–A6, a sentence-resolution instrument developed inside the Perpetual Essays project. This page organises the reading without replacing the full original presentation.</p>
+  </header>
+
+  <main class="container" id="overview">
+    <section class="section gold">
+      <h2>Begin here</h2>
+      <p class="lead">A1–A6 slows a completed declarative sentence down so that readers can inspect what the sentence actually does before interpreting it too quickly.</p>
+      <p>It asks six questions, locks the packet, then recovers three axes: Operator, Orientation, and Remainder. The claim is not that language is being reduced to a small grid. The claim is that completed declarative sentences may have recoverable completion-structure: a dominant kind of work, an attention direction, and a residue mode.</p>
+      <div class="button-row">
+        <a class="button" href="#archive">Read the preserved full presentation</a>
+        <a class="secondary" href="rigor-and-validation.html">Inspect validation</a>
+        <a class="secondary" href="llm-transparency.html">Read LLM transparency</a>
+      </div>
+    </section>
+
+    <section class="section" id="theory">
+      <h2>The theory doorway</h2>
+      <div class="grid wide">
+        <article class="card gold">
+          <h3>A1–A6 packet</h3>
+          <p><strong>A1</strong> — what was said<br><strong>A2</strong> — what was governed<br><strong>A3</strong> — what work was done<br><strong>A4</strong> — within what range<br><strong>A5</strong> — what residue remains<br><strong>A6</strong> — what rival reading is excluded</p>
+        </article>
+        <article class="card green">
+          <h3>Recovered axes</h3>
+          <p><strong>Operator</strong> — Distinction, Expansion, Relation, Correction, Integration, Closure.</p>
+          <p><strong>Orientation</strong> — Toward, Across, Away.</p>
+          <p><strong>Remainder</strong> — Is, With, Does.</p>
+        </article>
+        <article class="card blue">
+          <h3>Completion-shapes</h3>
+          <p>Six Operators multiplied by three Orientations and three Remainders produce 54 possible landings.</p>
+          <p>The sentence may carry several pressures, but one Operator becomes dominant at the landing.</p>
+        </article>
+      </div>
+    </section>
+
+    <details class="panel" open>
+      <summary>What is A1–A6?</summary>
+      <div class="detail-body">
+        <p>A1–A6 is a method for resisting premature interpretation. Instead of jumping straight to what a sentence seems to mean, it asks a reader to form a packet from the sentence’s own completed movement. That packet then allows the three axes to be recovered in a more disciplined way.</p>
+        <p>The method is designed for slow inspection. It is especially useful where paraphrase, fluent summary, ideological habit, legal assumption, translation pressure, or machine reading might make a sentence appear simpler than it is.</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>The six questions</summary>
+      <div class="detail-body">
+        <table class="axis-table">
+          <thead><tr><th>Question</th><th>Function</th></tr></thead>
+          <tbody>
+            <tr><td>A1 — what was said</td><td>Identifies the sentence’s stated content before commentary begins.</td></tr>
+            <tr><td>A2 — what was governed</td><td>Finds the scope, constraint, or handled material inside the sentence.</td></tr>
+            <tr><td>A3 — what work was done</td><td>Names the sentence-work performed by the completed declaration.</td></tr>
+            <tr><td>A4 — within what range</td><td>Marks the range in which the work holds.</td></tr>
+            <tr><td>A5 — what residue remains</td><td>Registers what remains after the sentence lands.</td></tr>
+            <tr><td>A6 — what rival reading is excluded</td><td>Protects the packet against an attractive but wrong completion.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>The three axes and 54 landings</summary>
+      <div class="detail-body">
+        <p>From a locked A1–A6 packet, the system recovers an Operator, an Orientation, and a Remainder. The 54 landings are not a replacement for reading. They are a way of making completion-structure inspectable.</p>
+        <div class="tagrow" aria-label="Operators">
+          <span class="tag">Distinction</span><span class="tag">Expansion</span><span class="tag">Relation</span><span class="tag">Correction</span><span class="tag">Integration</span><span class="tag">Closure</span>
+        </div>
+        <div class="tagrow" aria-label="Orientations">
+          <span class="tag">Toward</span><span class="tag">Across</span><span class="tag">Away</span>
+        </div>
+        <div class="tagrow" aria-label="Remainders">
+          <span class="tag">Is</span><span class="tag">With</span><span class="tag">Does</span>
+        </div>
+      </div>
+    </details>
+
+    <section class="section" id="audiences">
+      <h2>Reader routes</h2>
+      <p>The full archive is deliberately preserved. These routes help different readers find the part of the work they are most likely to need first.</p>
+      <div class="route-list">
+        <a class="route" href="#theory"><strong>For new readers</strong><span>Start with the six questions and the three axes.</span></a>
+        <a class="route" href="rigor-and-validation.html"><strong>For statistically minded readers</strong><span>Open the validation portal and full study files.</span></a>
+        <a class="route" href="validation/three_axis_recovery_study.html"><strong>For translators</strong><span>Inspect the multilingual constitutional recovery study.</span></a>
+        <a class="route" href="llm-transparency.html"><strong>For AI researchers</strong><span>Read the model-use and correction history.</span></a>
+        <a class="route" href="Ringside_View_backup.html"><strong>For academics and close readers</strong><span>Open the preserved full public presentation.</span></a>
+        <a class="route" href="index.html#routes"><strong>For Galway collaborators</strong><span>Return to the Galway-first invitation and contact-facing routes.</span></a>
+      </div>
+    </section>
+
+    <section class="section paper" id="archive">
+      <h2>Full original presentation</h2>
+      <p>The complete earlier Ringside View page remains intact and directly reachable. It is also embedded below as the full archive view so the project is organised without being shortened.</p>
+      <div class="button-row">
+        <a class="button" href="Ringside_View_backup.html">Open full original in its own page</a>
+        <a class="secondary" href="validation/index.html">Open studies</a>
+      </div>
+    </section>
+
+    <iframe class="archive-frame" src="Ringside_View_backup.html" title="Preserved full Ringside View presentation"></iframe>
+  </main>
+
+  <footer class="footer">
+    <p>Ringside View is organised here as a navigable doorway. The preserved original, validation studies, and LLM transparency statement remain available as full documents.</p>
+  </footer>
 </body>
 </html>
