@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ringside View — A Gift to Galway</title>
+  <style>
+    :root{
+      --ink:#1f2933;
+      --muted:#6b7280;
+      --paper:#fbf7ef;
+      --card:#fffdf8;
+      --line:#ded3c2;
+      --deep:#17202a;
+      --blue:#263f5f;
+      --gold:#b8872b;
+      --green:#2f5d50;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      background:radial-gradient(circle at top left,#fffdf8 0,#fbf7ef 42%,#efe4d2 100%);
+      color:var(--ink);
+      font-family:Georgia,'Times New Roman',serif;
+      line-height:1.7;
+    }
+    .page{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:44px 22px;
+    }
+    .panel{
+      width:min(980px,100%);
+      background:rgba(255,253,248,.92);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:0 28px 90px rgba(23,32,42,.14);
+      overflow:hidden;
+    }
+    .hero{
+      background:linear-gradient(135deg,#111820,#263f5f);
+      color:#fff;
+      padding:58px clamp(26px,6vw,70px) 46px;
+      border-bottom:6px solid var(--gold);
+    }
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:#f3ca78;
+      font-size:.78rem;
+      margin:0 0 14px;
+    }
+    h1{
+      font-size:clamp(2.3rem,6vw,5.4rem);
+      line-height:.98;
+      letter-spacing:-.055em;
+      margin:0 0 18px;
+    }
+    .subtitle{
+      font-size:clamp(1.1rem,2vw,1.35rem);
+      color:#f7ead7;
+      max-width:760px;
+      margin:0;
+    }
+    .content{
+      padding:42px clamp(26px,6vw,70px) 54px;
+    }
+    p{margin:0 0 18px;font-size:1.08rem;}
+    .lead{
+      font-size:1.26rem;
+      color:#24313b;
+    }
+    .galway{
+      margin:30px 0;
+      padding:24px 26px;
+      background:#f7f0e4;
+      border-left:6px solid var(--green);
+      border-radius:18px;
+    }
+    .galway p{margin-bottom:14px;}
+    .small-note{
+      color:var(--muted);
+      font-size:.98rem;
+    }
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:32px;
+    }
+    a.button{
+      display:inline-block;
+      text-decoration:none;
+      background:var(--deep);
+      color:#fff;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:bold;
+      letter-spacing:.02em;
+      box-shadow:0 12px 30px rgba(23,32,42,.18);
+      transition:transform .16s ease, background .16s ease;
+    }
+    a.button:hover{transform:translateY(-1px);background:#263f5f;}
+    a.secondary{
+      display:inline-block;
+      text-decoration:none;
+      color:var(--blue);
+      border:1px solid var(--line);
+      background:#fffdf8;
+      padding:13px 20px;
+      border-radius:999px;
+    }
+    .footer{
+      margin-top:34px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    @media(max-width:680px){
+      .page{padding:18px 12px;align-items:flex-start;}
+      .panel{border-radius:22px;}
+      .hero{padding:42px 24px 34px;}
+      .content{padding:30px 24px 38px;}
+      p{font-size:1.02rem;}
+      .lead{font-size:1.13rem;}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel" aria-labelledby="title">
+      <header class="hero">
+        <p class="kicker">Ringside View</p>
+        <h1 id="title">A gift to Galway.</h1>
+        <p class="subtitle">A Galway-first invitation to look carefully at an idea that may help people, schools, businesses, researchers, and AI systems read sentences more responsibly.</p>
+      </header>
+
+      <div class="content">
+        <p class="lead">I am from Galway. I love Galway. Everything in my life has been given to me from Galway, and I want to give something back.</p>
+
+        <div class="galway">
+          <p>I went to the Bish. I went to Scoil Caitríona in Renmore. I studied in University College Galway twice. I have worked in Galway City all my life. My life, my education, my work, my friendships, and my imagination have all been shaped here.</p>
+          <p>This project is offered first as a Galway idea. Not because it should remain small, but because Galway is where it should be first understood, tested, protected, and given a chance to grow.</p>
+        </div>
+
+        <p>The idea inside this site is called <strong>A1–A6</strong>. It is a method for slowing a sentence down so we can see what it actually does before we interpret it too quickly. It asks what was said, what was governed, what work was done, within what range, what residue remains, and what rival reading is excluded.</p>
+
+        <p>I believe this idea may offer opportunities for many different kinds of people and businesses in Galway: education, AI, translation, legal reading, research, product design, training, publishing, and careful public reasoning. My first port of call is Galway. I want to see what support, criticism, collaboration, and stewardship can be found here before the idea goes anywhere else.</p>
+
+        <p>This is not presented as a finished empire. It is an invitation. My hope is simply that people will take the time to see what is on offer.</p>
+
+        <div class="cta-row">
+          <a class="button" href="Ringside_View.html">Enter Ringside View</a>
+          <a class="secondary" href="https://github.com/TitanicParker/ringside-view">View the GitHub repository</a>
+        </div>
+
+        <p class="footer">Prepared from Galway, for Galway first. If the idea has value, let it be tested carefully, protected properly, and shared generously.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
